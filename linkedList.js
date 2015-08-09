@@ -1,47 +1,39 @@
-function linkedNode(value) {
+function Node(value) {
   this.value = value;
   this.next = null;
 }
 
-linkedNode.prototype.value = function() {
-  return this.value;
-};
-
-linkedNode.prototype.nextNode = function() {
-  return this.next;
-};
-
-function linkedList() {
+function LinkedList() {
   this.head = null;
   this.tail = null;
 }
 
-linkedList.prototype.push = function(value) {
+LinkedList.prototype.push = function(value) {
   if (this.head === null) {
-    this.head = new linkedNode(value);
+    this.head = new Node(value);
     this.tail = this.head;
   } else {
-    var newNode = new linkedNode(value);
+    var newNode = new Node(value);
     this.tail.next = newNode;
     this.tail = newNode;
   }
 };
 
-linkedList.prototype.pop = function() {
+LinkedList.prototype.pop = function() {
   this.tail = null;
 };
 
-linkedList.prototype.shift = function() {
+LinkedList.prototype.shift = function() {
   this.head = this.head.next;
 };
 
-linkedList.prototype.unshift = function(value) {
+LinkedList.prototype.unshift = function(value) {
   var temp = this.head;
-  this.head = new linkedNode(value);
+  this.head = new Node(value);
   this.head.next = temp;
 };
 
-linkedList.prototype.deleteNode = function(value) {
+LinkedList.prototype.deleteNode = function(value) {
   var currentNode = this.head;
   var previousNode = null;
 
@@ -57,7 +49,7 @@ linkedList.prototype.deleteNode = function(value) {
   return -1;
 };
 
-linkedList.prototype.findNode = function(value) {
+LinkedList.prototype.findNode = function(value) {
   var node = this.head;
   while (node !== null) {
     if (node.value === value) {

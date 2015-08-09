@@ -1,4 +1,4 @@
-function queue() {
+function Queue() {
   this.queue = [];
 
   this.enqueue = function(value) {

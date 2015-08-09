@@ -1,4 +1,4 @@
-function minMaxStack() {
+function MinMaxStack() {
   this.stack = [];
   this.max = 0;
   this.min = 0;
